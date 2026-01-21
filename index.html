@@ -2,105 +2,57 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SOS STORE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- ===== HEADER ===== -->
-<header class="main-header">
-  <div class="container header-content">
-    <div class="brand">
-      <img src="images/logo.png" alt="SOS STORE Logo">
-      <h1>SOS STORE</h1>
-    </div>
-
-    <nav class="nav">
-      <a href="#section1">قسم 1</a>
-      <a href="#section2">قسم 2</a>
-      <a href="#section3">قسم 3</a>
-      <a href="#section4">قسم 4</a>
-    </nav>
-
-    <a class="insta-btn" href="https://instagram.com/sos_sstorre" target="_blank">
-      تواصل عبر إنستغرام
-    </a>
-  </div>
+<header class="top-bar">
+  <img src="images/logo.png" class="logo">
+  <a href="https://instagram.com/sos_sstorre" target="_blank" class="insta-link">
+    @sos_sstorre
+  </a>
 </header>
 
-<!-- ===== HERO ===== -->
-<section class="hero">
-  <h2>تجربة تسوق فخمة</h2>
-  <p>براند عصري – جودة عالية – ستايل عالمي</p>
-</section>
+<main class="grid">
+  <!-- خانات عامة -->
+  <div class="card" onclick="openProduct(0)"></div>
+  <div class="card" onclick="openProduct(1)"></div>
+  <div class="card" onclick="openProduct(2)"></div>
+  <div class="card" onclick="openProduct(3)"></div>
+  <div class="card" onclick="openProduct(4)"></div>
+  <div class="card" onclick="openProduct(5)"></div>
+  <div class="card" onclick="openProduct(6)"></div>
+  <div class="card" onclick="openProduct(7)"></div>
+  <div class="card" onclick="openProduct(8)"></div>
+  <div class="card" onclick="openProduct(9)"></div>
+</main>
 
-<!-- ===== SECTIONS ===== -->
+<!-- نافذة المنتج -->
+<div class="modal" id="productModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeProduct()">×</span>
 
-<div class="container">
-
-  <!-- SECTION 1 -->
-  <section id="section1" class="product-section">
-    <h3>القسم الأول</h3>
-    <div class="products-grid">
-      <!-- 10 خانات -->
-      <div class="product-card"></div>
-      <div class="product-card"></div>
-      <div class="product-card"></div>
-      <div class="product-card"></div>
-      <div class="product-card"></div>
-      <div class="product-card"></div>
-      <div class="product-card"></div>
-      <div class="product-card"></div>
-      <div class="product-card"></div>
-      <div class="product-card"></div>
+    <div class="slider">
+      <img id="slideImg" src="images/img1.jpg">
     </div>
-  </section>
 
-  <!-- SECTION 2 -->
-  <section id="section2" class="product-section">
-    <h3>القسم الثاني</h3>
-    <div class="products-grid">
-      <div class="product-card"></div>
-      <div class="product-card"></div>
-      <div class="product-card"></div>
-      <div class="product-card"></div>
-      <div class="product-card"></div>
+    <div class="product-actions">
+      <button onclick="like()">❤️ <span id="likes">0</span></button>
     </div>
-  </section>
 
-  <!-- SECTION 3 -->
-  <section id="section3" class="product-section">
-    <h3>القسم الثالث</h3>
-    <div class="products-grid">
-      <div class="product-card"></div>
-      <div class="product-card"></div>
-      <div class="product-card"></div>
-      <div class="product-card"></div>
-      <div class="product-card"></div>
-    </div>
-  </section>
+    <textarea id="commentInput" placeholder="اكتب تعليقك..."></textarea>
+    <div class="card" onclick="openProduct(0)"></div>
+<button onclick="addComment()">إرسال</button>
 
-  <!-- SECTION 4 -->
-  <section id="section4" class="product-section">
-    <h3>القسم الرابع</h3>
-    <div class="products-grid">
-      <div class="product-card"></div>
-      <div class="product-card"></div>
-      <div class="product-card"></div>
-      <div class="product-card"></div>
-      <div class="product-card"></div>
-    </div>
-  </section>
-
+    <div id="comments"></div>
+  </div>
 </div>
 
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <p>© 2026 SOS STORE – All Rights Reserved</p>
-</footer>
-
+<script src="script.js"></script>
 </body>
 </html>
+<
